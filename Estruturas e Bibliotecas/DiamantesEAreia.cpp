@@ -13,26 +13,19 @@ int main()
 
     while (nc--)
     {
-
         getline(cin, entry);
-        bool valid = false;
+
         vector<char> left;
         int num = 0;
 
         for (int i = 0; i < entry.size(); i++)
         {
-
             if (entry[i] == '>')
             {
-                if (left.empty())
-                {
-                    valid = false;
-                }
-                else
+                if (!left.empty())
                 {
                     left.pop_back();
                     num++;
-                    valid = true;
                 }
             }
             else if (entry[i] == '<')
